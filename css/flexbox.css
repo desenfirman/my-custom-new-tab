@@ -1,0 +1,28 @@
+.container
+{
+    display: flex;
+}
+
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-side
+{
+    flex: 58%;
+    padding: 20px
+}
+
+.right-side
+{
+    padding: 20px;
+    flex: 38%;
+}
+
+.flex-end
+{
+    align-self: flex-end;
+}
+

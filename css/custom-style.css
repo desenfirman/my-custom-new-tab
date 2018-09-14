@@ -1,0 +1,22 @@
+@font-face 
+{
+    font-family: 'PoiretOne';
+    src: url('PoiretOne-Regular.ttf')  format('cursive');
+}
+
+@font-face 
+{
+    font-family: 'Raleway';
+    src: url('Raleway-Medium.ttf')  format('sans-serif');
+}
+
+html, body{
+    height: 100%;
+    color: #f4f4f4;
+}
+
+
+
+#time
+{
+}
