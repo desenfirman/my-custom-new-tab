@@ -22,6 +22,10 @@ ul{
 	padding: 0;
 }
 
+li{
+	margin: 5% 0 5% 0;
+}
+
 a{
 	text-decoration: none;
     color: #f4f4f4;
@@ -38,28 +42,40 @@ a{
 
 .main{
 	display: flex;
-	width: 50%;
+	width: 40%;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
 
 .header{
-	width: 60%;
+	width: 100%;
 	font-size: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#link{
+	width: 100%;
+	padding: 0;
 }
 
 #time
 {
-	font-family: 'arial';
-	font-size: 450%;
+	font-family: 'arial narrow';
+	font-size: 500%;
 }
 
 #greeter{
-  	padding: 10px 10px 10px 10px;
+	width: 60%;
+	font-size: 2.6ch;
+	align-self: center;
+  	padding: 18px 15px 18px 15px;
 }
 
 #tools, #distraction{
+	width: 100%;
   	padding: 0px 25px 2px 25px;
   	margin: 5px 10px 5px 10px;
 }
@@ -69,6 +85,11 @@ h4{
 	margin-top: 15px;
 }
 
-#greeter, #sleep-reminder, #connection-check, #link{
+#time, #greeter, #link{
+	margin: 1.5% auto 1.5% auto;
+}
+
+#sleep-reminder, #connection-check{
+	margin: 0.5% auto 0.5% auto;	
 }
 

@@ -64,7 +64,7 @@ function setWallpaper()
         imagePrefix = "evening";
     }
     else if (h < 15) {
-        imagePrefix = "morning";
+        imagePrefix = "noon";
     }
     else if (h < 20) {
         imagePrefix = "afternoon";
