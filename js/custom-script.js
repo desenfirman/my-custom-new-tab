@@ -1,5 +1,5 @@
 
-const FULL_NAME = "Dese N. Firmansyah";
+const FULL_NAME = "Dese";
 
 var tools = [
     {
@@ -51,15 +51,32 @@ var distraction = [
 ]
 
 
-var h, m;
+var today = new Date();
+var h = today.getHours();
+var m;
 var greet;
+setWallpaper();
 
-onlyOnce();
-
-function onlyOnce()
+function setWallpaper()
 {
+    imagePrefix = "morning";
+    if (h < 5){
+        imagePrefix = "evening";
+    }
+    else if (h < 15) {
+        imagePrefix = "morning";
+    }
+    else if (h < 20) {
+        imagePrefix = "afternoon";
+    }
+    else{
+        imagePrefix = "evening";
+    }
+    var body = document.body;
+    body.style.background = 'url(' + '"' + './' + 'wallpaper/' + imagePrefix + '.jpg';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundSize = 'cover';
 }
-
 
 function realTime() {
     setClock();
@@ -74,36 +91,37 @@ function realTime() {
     else{
         document.getElementById("connection-check").innerHTML = "";
     }
-    document.getElementById("greeter").innerHTML = "Good " + greet + ", " + FULL_NAME;
-    document.getElementById("time").innerHTML = h + ":" + m;
     var t = setTimeout(realTime, 500);
 }
 
 
 function setClock() {
-    var today = new Date();
     h = today.getHours();
     m = today.getMinutes();
 
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
+    document.getElementById("time").innerHTML = h + ":" + m;
 
 }
 
 function greeter() {
     if (h < 12) {
-        greet = "Morning";
+        greet = "morning";
     }
     else if (h < 15) {
-        greet = "Noon";
+        greet = "noon";
     }
     else if (h < 18) {
-        greet = "Afternoon";
+        greet = "afternoon";
     }
-    else {
-        greet = "Evening";
+    else if (h < 20){
+        greet = "evening";
     }
-    return greet;
+    else{
+        greet = "night";
+    }
+    document.getElementById("greeter").innerHTML = "Good " + greet + ", " + FULL_NAME;
 }
 
 function sleepReminder() {
@@ -117,15 +135,21 @@ function isOnline(){
 }
 
 function showLinks() {
-    var dom = "<ul>";
+    var urls = "";
     tools.forEach(element => {
         var url = (!isOnline() && element.isWWW) ? "" : "href = '" + element.url + "'";
-        dom += '<li ><a ' + url + '">' + element.name + '</a></li>';
+        urls += '<li ><a ' + url + '">' + element.name + '</a></li>';
     });
-    dom += "</ul>";
 
-    document.getElementById('tools').innerHTML = dom;
+    document.querySelectorAll('#tools ul')[0].innerHTML = urls;
 
+    var urls = "";
+    distraction.forEach(element => {
+        var url = (!isOnline() && element.isWWW) ? "" : "href = '" + element.url + "'";
+        urls += '<li ><a ' + url + '">' + element.name + '</a></li>';
+    });
+
+    document.querySelectorAll('#distraction ul')[0].innerHTML = urls;
 }
 
 function trelloEmbed() {
