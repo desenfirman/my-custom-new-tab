@@ -107,21 +107,21 @@ function setClock() {
 
 function greeter() {
     if (h < 12) {
-        greet = "morning";
+        greet = "good morning";
     }
     else if (h < 15) {
-        greet = "noon";
+        greet = "have a good day";
     }
     else if (h < 18) {
-        greet = "afternoon";
+        greet = "good afternoon";
     }
     else if (h < 20){
-        greet = "evening";
+        greet = "good evening";
     }
     else{
-        greet = "night";
+        greet = "good night";
     }
-    document.getElementById("greeter").innerHTML = "Good " + greet + ", " + FULL_NAME;
+    document.getElementById("greeter").innerHTML = "Hi " + FULL_NAME + ", " + greet;
 }
 
 function sleepReminder() {
