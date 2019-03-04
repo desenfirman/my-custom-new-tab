@@ -61,16 +61,16 @@ function setWallpaper()
 {
     imagePrefix = "morning";
     if (h < 5){
-        imagePrefix = "evening";
+        imagePrefix = "https://github.com/desenfirman/my-custom-new-tab/raw/host/wallpaper/evening.jpg";
     }
     else if (h < 15) {
-        imagePrefix = "noon";
+        imagePrefix = "https://github.com/desenfirman/my-custom-new-tab/raw/host/wallpaper/noon.jpg";
     }
     else if (h < 20) {
-        imagePrefix = "afternoon";
+        imagePrefix = "https://github.com/desenfirman/my-custom-new-tab/raw/host/wallpaper/afternoon.jpg";
     }
     else{
-        imagePrefix = "evening";
+        imagePrefix = "https://github.com/desenfirman/my-custom-new-tab/raw/host/wallpaper/evening.jpg";
     }
     var body = document.body;
     body.style.background = 'url(' + '"' + './' + 'wallpaper/' + imagePrefix + '.jpg';
